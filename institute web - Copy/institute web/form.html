@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+    <style>
+
+    </style>
+</head>
+<link rel="stylesheet" href="form.css">
+
+<body>
+    <nav>
+        <ul>
+            <li><a href=""><img src="images/Farabi Logo.png" width="60px" height="25px" ;></a></li>
+            <li><a href="home page.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Director.html">Director & Principal</a></li>
+            <li><a href="Courses.html">Courses/services</a></li>
+            <li><a href="Teaching.html">teaching Staff</a></li>
+            <li><a href="Address.html">Address</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <h2>Registration form!</h2>
+    <h4>Our Program is designed to provide learning experience with state of the artlab and dynamic enviroment.
+        benifites include certificate internship opportunitys and learning from wel experience and expert.
+        vanue Bar Qamber Khail dist khyber total fee 15000 per course</h4>
+    <hr>
+    <h3 align="center"> Register yourselef here</h3>
+    <div class="main">
+        <div class="right">
+            <br>
+            <form id="myForm">
+                <div class="input">
+                    <p>Name:</p>
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" required>
+                    <p>Email:</p>
+                    <label for="email"></label>
+                    <input type="text" id="email" name="email" required>
+                    <p>Password:</p>
+                    <label for="password"></label>
+                    <input type="password" id="password" name="password" required>
+                    <p>Address</p>
+                    <input type="text" id="address" name="address" placeholder="Address">
+                    <p>CNIC</p>
+                    <input type="text" id="cnic" name="cnic" placeholder="CNIC">
+                    <p>Age</p>
+                    <input type="text" id="age" name="age" placeholder="Age">
+                    <p>Cell Phone</p>
+                    <input type="text" id="cellPhone" name="cellPhone" placeholder="Cell Phone">
+                    <p>Post</p>
+                    <input type="text" id="post" name="post" placeholder="Post">
+                    <p>Qualification</p>
+                    <input type="text" id="qualification" name="qualification" placeholder="Qualification">
+                </div>
+                <div id="submitMessage" class="submit-message" style="display: none;"></div>
+                <h3><u>Courses Applied for:</u></h3>
+                <input type="checkbox" id="course1" name="course1" value="Ms Office, 7000">
+                <label for="course1">Ms Office "word,Excel,Power point" - 7000 pkr</label><br>
+                <input type="checkbox" id="course2" name="course2" value="Graphic Designing, 9000">
+                <label for="course2">Graphic Designing "Photoshop, Corel draw, Inpage" 9000Pkr</label><br>
+                <input type="checkbox" id="course3" name="course3" value="CCNA, 20000">
+                <label for="course3">CCNA "also basic theory and practical lab" 20000pkr</label><br>
+                <input type="checkbox" id="course4" name="course4" value="WEB development, 20000">
+                <label for="course4">WEB development "HTML CSS Javascript Rect PHP MangoDB" 20000pkr</label><br>
+                <input type="checkbox" id="course5" name="course5" value="WordPress, 15000">
+                <label for="course5">WordPress "include Hosting and domain" Rs 15000 pkr</label><br>
+                <input type="submit" value="Submit" onclick="handleSubmit(event)" class="submit-button">
+            </form>
+
+
+
+            <hr>
+            <h1> Collect Fee Deposite Slip Here</h1>
+            <div class="button"><input type="submit" name="submit" value="Generate-fee-slip"></div>
+
+        </div>
+
+    </div>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault(); // Prevents the form from submitting normally
+
+            // Get values from the form
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const address = document.getElementById('address').value;
+            const cnic = document.getElementById('cnic').value;
+            const age = document.getElementById('age').value;
+            const cellPhone = document.getElementById('cellPhone').value;
+            const post = document.getElementById('post').value;
+            const qualification = document.getElementById('qualification').value;
+
+            // Get values from checkboxes
+            const courses = [];
+            const prices = [];
+            document.querySelectorAll('input[type="checkbox"]:checked').forEach(item => {
+                const [courseName, price] = item.value.split(', ');
+                courses.push(courseName);
+                prices.push(price);
+            });
+
+            // Display or use the collected values
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('password:', password);
+            console.log('Address:', address);
+            console.log('CNIC:', cnic);
+            console.log('Age:', age);
+            console.log('Cell Phone:', cellPhone);
+            console.log('Post:', post);
+            console.log('Qualification:', qualification);
+            console.log('Courses:', courses);
+            console.log('Prices:', prices);
+
+            // 
+            const formData = {
+                name: name,
+                email: email,
+                address: address,
+                password: password,
+                cnic: cnic,
+                age: age,
+                cellPhone: cellPhone,
+                post: post,
+                qualification: qualification,
+                courses: courses,
+                prices: prices
+            };
+
+            // Send the form data to the backend
+            fetch('http://localhost:5000/api/Registermodel', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Form data submitted successfully');
+                        alert("Form data submitted successfully")
+                        window.location.reload();
+                        // You can redirect or show a success message here if needed
+                    } else {
+                        console.error('Error submitting form data');
+                        // Handle error cases here
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+            // 
+
+            // You can do further processing or send this data to a server using AJAX
+        }
+
+    </script>
+</body>
+
+</html>

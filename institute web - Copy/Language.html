@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="lang.css">
+  <link rel="stylesheet" href="home.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARABI Language Hub of Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+<header>
+    <h1 align="center"> Farabi Fast School and College</h1>
+    <a href="home page.html"><h3 align="center">Farabi the HuB</h3></a>
+    <nav>
+      <ul>
+        <li><a href=""><img src="images/Farabi Logo.png" width="60px" height="25px";></a></li>
+        <li><a href="home page.html">Home</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Director.html">Director & Principal</a></li>
+        <li><a href="Courses.html">Courses/services</a></li>
+        <li><a href="Teaching.html">teaching Staff</a></li>
+        <li><a href="Address.html">Address</a></li>
+        <li><a href="Contact.html">Contact</a></li>
+        <li><a href="Download.html">Download</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+
+    <!-- <div class="header-container">
+        <h1>Welcome to FARABI Language the HUB of Knowledge</h1>
+        <div class="quick-links">
+          <a href="#" class="quick-link">Fee Payment</a>
+          <a href="#" class="quick-link">Online Tests</a>
+          <a href="#" class="quick-link">Form Submission</a>
+          <a href="#" class="quick-link">Scholarship</a>
+          <a href="#" class="quick-link">Contact</a>
+      </div>
+        <marquee behavior="scroll" direction="left">Announcement: Fresh classes is being started</marquee>
+    </div>
+    <div class="department-links">
+      <a href="#" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi Fast School and college</a>
+      <a href="#" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi English language center</a>
+      <a href="#" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">farabi computer institute</a>
+      <a href="tuetion.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi tuetion acadmey</a>
+      <a href="#" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi Fast Software House</a>
+  </div> -->
+
+  <div>
+
+    <div class="director-containers" id="staff">
+
+         <div class="director-container">
+            <div class="text-area">
+                <h2>Fresh Level 1</h2>
+                <h2> Nisar Ahmad</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="LanguageForm.html" class="apply">Apply</a>
+            </div>
+            </div>
+
+            <div class="director-container">
+              <div class="text-area">
+                  <h2>Fresh Level 2</h2>
+                  <h2> Muhammad Yaseen</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <a href="LanguageForm.html" class="apply">Apply</a>
+              </div>
+          </div>
+
+          <div class="director-container">
+            <div class="text-area">
+                <h2>Fresh Level 3</h2>
+                <h2>Waqif khan</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <a href="LanguageForm.html" class="apply">Apply</a>
+            </div>
+        </div>
+
+        <div class="director-container">
+          <div class="text-area">
+              <h2>Fresh Level 4</h2>
+              <h2>Khan Gul</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <a href="LanguageForm.html" class="apply">Apply</a>
+          </div>
+      </div>
+
+      <div class="director-container">
+        <div class="text-area">
+            <h2>Fresh Level 5</h2>
+            <h2> Muhammad Yaseen</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <a href="LanguageForm.html" class="apply">Apply</a>
+        </div>
+    </div>
+
+      </div>
+
+      <div>
+      
+       
+    </div>
+
+    
+
+  </div>
+
+    
+      
+        </div>
+
+        
+    </div>
+
+
+ 
+
+
+
+
+
+    <script src="home.js"></script>
+    <script>
+      // Fetch data from the backend
+      fetch('http://localhost:5000/api/languages')
+        .then(response => response.json())
+        .then(data => {
+          console.log('Number of records:', data.length); // Log the number of records
+          const staffContainer = document.getElementById('staff');
+
+          // Use map function to iterate over the data and create HTML elements dynamically
+          const imagePostElements = data.map(imagePost => `
+             <div class="director-container">
+            <div class="text-area">
+                <h2>${imagePost.language}</h2>
+                <h2>${imagePost.name}</h2>
+                <p>${imagePost.shortDescription}</p>
+                <a href="LanguageForm.html?value=${imagePost.name}" class="apply">Apply</a>
+            </div>
+        </div>
+        `);
+          // Join the array of HTML elements and insert into the container
+          staffContainer.innerHTML = imagePostElements.join('');
+        })
+        .catch(error => console.error('Error fetching image posts:', error));
+    </script>
+</body>
+
+</html>

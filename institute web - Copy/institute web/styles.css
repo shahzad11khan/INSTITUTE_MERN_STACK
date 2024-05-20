@@ -1,0 +1,188 @@
+nav {
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+    
+  }
+  
+  li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  li a:hover {
+    background-color: #555;
+  }
+
+  //css code of home page
+
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+  }
+  
+
+ 
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Hero section styles */
+ 
+  h1{
+  
+    color: red;
+    text-shadow: pink;
+    text-emphasis: bold;
+  }
+  
+  .apply-button{
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+  }
+  
+  /* Courses section styles */
+  
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  header {
+    background-color: #333;
+    padding: 10px;
+    color: white;
+  }
+  
+  header h1 {
+    margin: 0;
+  }
+  
+  
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  
+  nav li a:hover {
+    color: #ffd700;
+  }
+  
+  /* main section styles coded by nisar ahmad*/
+  .main {
+   
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .apply-button {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  
+  .apply-button:hover {
+    background-color: #ffd700;
+  }
+
+  /*  here we code about Courses section styles coded by nisar ahmad */
+  .coursebtn{
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  .coursebtn:hover {
+    background-color: #ffd700;
+  }
+  .courses {
+    padding: 20px;
+    
+  }
+  
+  .courses h2 {
+    margin-top: 0;
+  }
+  
+  .courses ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .courses li {
+    margin-bottom: 10px;
+  }
+  h2{
+    color: white;
+  }
+  .courses li a {
+    text-decoration: none;
+    color:white;
+    transition: color 0.3s;
+  }
+  
+  .courses li a:hover {
+    color: #ffd700;
+  }
+  
+  /* Footer styles code by nisar ahmad */
+  footer {
+    background-color:black;
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  body{
+    background-image: url("images/lab3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  h2,h3{
+    color: black;
+  }

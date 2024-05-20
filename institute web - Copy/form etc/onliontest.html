@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Test</title>
+    <link rel="stylesheet" href="stylestest.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Test</h1>
+        <form action="#">
+            <div class="question">
+                <p>1. What is the capital of France?</p>
+                <label>
+                    <input type="radio" name="q1" value="Paris"> a) Paris
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="London"> b) London
+                </label>
+                <label>
+                    <input type="radio" name="q1" value="Rome"> c) Rome
+                </label>
+            </div>
+            
+            <div class="question">
+                <p>2. Who wrote "Romeo and Juliet"?</p>
+                <label>
+                    <input type="radio" name="q2" value="William Shakespeare"> a) William Shakespeare
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="Charles Dickens"> b) Charles Dickens
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="Jane Austen"> c) Jane Austen
+                </label>
+            </div>
+            
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+    document.querySelector('form').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the form from submitting
+
+        // Get the selected value for each question
+        var q1Value = document.querySelector('input[name="q1"]:checked').value;
+        var q2Value = document.querySelector('input[name="q2"]:checked').value;
+
+        // Log the selected values (you can do further processing here)
+        // console.log("Question 1:", q1Value);
+        // console.log("Question 2:", q2Value);
+        const formData = {
+            capital: q1Value,
+            Romeo_and_Juliet: q2Value
+        };
+
+        console.log(formData); // Log formData object
+
+        // Make fetch request to submit form data
+        fetch('http://localhost:5000/api/quizzes', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Form data submitted successfully');
+                    alert("Form data submitted successfully");
+                    // Reset radio button selections
+                    document.querySelector('input[name="q1"]:checked').checked = false;
+                    document.querySelector('input[name="q2"]:checked').checked = false;
+                    // You can redirect or show a success message here if needed
+                } else {
+                    console.error('Error submitting form data');
+                    // Handle error cases here
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    });
+
+    </script>
+</body>
+</html>

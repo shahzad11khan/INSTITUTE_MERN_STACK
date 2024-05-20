@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My form</title>
+    <style>
+       
+    </style>
+</head>
+<link rel="stylesheet" href="form.css">
+
+<body>
+    <nav>
+        <ul>
+          <li><a href=""><img src="images/Farabi Logo.png" width="60px" height="25px";></a></li>
+          <li><a href="home page.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Director.html">Director & Principal</a></li>
+          <li><a href="Courses.html">Courses/services</a></li>
+          <li><a href="Teaching.html">teaching Staff</a></li>
+          <li><a href="Address.html">Address</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    <h2 >Registration form!</h2>
+    <h4>Our Program is designed to provide learning experience with state of the artlab and dynamic enviroment. benifites include certificate internship opportunitys and learning from wel experience and expert.
+         vanue Bar Qamber Khail dist khyber total fee 15000 per course</h4>
+         <hr>
+         <h3 align="center"> Register yourselef here</h3>
+    <div class="main">
+            <div class="right">
+                <br>
+                <form onsubmit="return handleSubmit()">
+                <div class="input">
+                    <p>Name:</p>
+                    <label for="name"></label>
+                    <input type="text" id="name" name="name" required>
+                    <p>Email:</p>
+                    <label for="email"></label>
+                    <input type="text" id="email" name="email" required>
+                <p>Address</p>
+                <input type="text" placeholder=" Address">
+                <p>CNIC</p>
+                <input type="text" placeholder=" CNIC">
+                <p>Age</p>
+                <input type="text" placeholder=" Age">
+                <p>cell Phone</p>
+                <input type="text" placeholder=" Cell Phone">
+                <p>Book Name</p>
+                <input type="text" placeholder=" post">
+                <p>Teacher Name</p>
+                <input type="text" placeholder=" Qulification">
+            </form>
+            <div id="submitMessage" class="submit-message" style="display: none;"></div>
+            </div>
+            <h3><u>Books Applied for:</u></h3>
+            <form>
+                <input type="checkbox" id="course1" name="course1" value="course1">
+                <label for="course1">Computer Science" - 7000 pkr</label><br>
+            <BR>
+                <input type="checkbox" id="course2" name="course2" value="course2">
+                <label for="course2">Physics "- 9000Pkr</label><br>
+            <br>
+                <input type="checkbox" id="course3" name="course3" value="course3">
+                <label for="course3">Mathametics"- 20000pkr</label><br>
+            <br>
+                <label for="course3">Shift:</label><br>
+                <input type="checkbox" id="course4" name="course4" value="course3">
+                <label for="course3">Morning:</label><br>
+                <input type="checkbox" id="course4" name="course4" value="course3">
+                <label for="course3">Evening:</label><br>
+            <br>
+               
+                <input type="submit" value="Submit" class="submit-button">
+              </form>
+
+                    <hr>
+                <h1> Collect Fee Deposite Slip Here</h1>
+               <div class="button"><input type= "submit" name ="submit" value ="Generate-fee-slip"></div> 
+
+            </div>
+        
+    </div>
+</body>
+</html>

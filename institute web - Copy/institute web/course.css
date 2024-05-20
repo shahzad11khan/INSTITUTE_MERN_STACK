@@ -1,0 +1,75 @@
+nav {
+    background-color: #333;
+    padding: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+  li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  li a:hover {
+    background-color: #555;
+  }
+.office,.graphics{
+    display: inline-block;
+    box-sizing: border-box;
+    padding: 20px;
+    margin: auto;
+    border: 1px solid black;
+}
+.office{
+    width: 48%;
+    height: 300px;
+    background-image: url("images/office.png");
+    background-size: cover;
+    border-radius: 90px;
+}
+.graphics{
+    width: 48%;
+    height: 300px;
+    background-image: url("images/graphics.png");
+    background-size: cover;
+    float: right;
+    border-radius: 90px;
+}
+
+.CCNA{
+    width: 48%;
+    height: 300px;
+    background-image: url("images/ccna.png");
+    background-size: cover;
+    border-radius: 90px;
+}
+.web{
+    width: 48%;
+    height: 300px;
+    background-image: url("images/web.png");
+    background-size: cover;
+    float: right;
+    border-radius: 90px;
+}
+h2{
+    background-color: blue;
+  width: 100%;
+}
+.coursebtn{
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+  }
+  .coursebtn:hover {
+    background-color: #ffd700;
+  }

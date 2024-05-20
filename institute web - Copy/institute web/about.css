@@ -1,0 +1,85 @@
+nav {
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  li {
+    display: inline-block;
+    
+  }
+  
+  li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  li a:hover {
+    background-color: #555;
+  }
+.main{
+   
+    width: 92%;
+    padding: 20px;
+
+}
+.cls1,.cls2,.cls3,.cls4,.cls5,.cls6,.cls7,.cls8,.cls9,.cls10{
+    border: 2px dotted brown;
+    width: 90%;
+    height: 250px;
+    padding: 20px;
+    border-radius: 80px;
+}
+.cls1{
+    background-image: url("images/maporg.jpg");
+    background-size: cover;
+}
+.cls2{
+    background-image: url("images/1stbatch.jpg");
+    background-size: cover;
+}
+.cls3{
+    background-image: url("images/class.jpg");
+    background-size: cover;
+}
+.cls4{
+    background-image: url("images/outsidee.jpg");
+    background-size: cover;
+}
+.cls5{
+    background-image: url("images/internelleft.jpg");
+    background-size: cover;
+}
+.cls6{
+    background-image: url("images/internelrt.jpg");
+    background-size: cover;
+}
+.cls7{
+    background-image: url("images/lab1.jpg");
+    background-size: cover;
+}
+.cls8{
+    background-image: url("images/worddesign.jpg");
+    background-size: cover;
+}
+.cls9{
+    background-image: url("images/lab3.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.cls10{
+    background-image: url("images/lab2.jpg");
+    background-size: cover;
+}
+h2{
+    background-color: pink;
+    color: blue;
+    text-align: center;
+    width: 85%;
+}

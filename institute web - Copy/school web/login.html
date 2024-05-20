@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="login.css">
+    <!-- <script>
+        function redirectToRegistration() {
+          window.location.href = "form.html";
+        }
+      </script -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li><a href=""><img src="images/Farabi Logo.png" width="60px" height="25px";></a></li>
+          <li><a href="home page.html">Home</a></li>
+          <li><a href="About.html">About</a></li>
+          <li><a href="Director.html">Director & Principal</a></li>
+          <li><a href="Courses.html">Courses/services</a></li>
+          <li><a href="Teaching.html">teaching Staff</a></li>
+          <li><a href="Address.html">Address</a></li>
+          <li><a href="Contact.html">Contact</a></li>
+        </ul>
+      </nav>      
+
+
+
+
+    <div class="left">
+        <br><br><br><br><br><br><br><br><br><br><br><br>
+        <h1 align="center"> Login Form</h1>
+        <div class="container">
+          <form id="login-form">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="name">Password:</label>
+            <input type="text" id="password" name="password" required>
+            <br>
+            <br>
+            <br>
+            <input type="submit" onclick="" value="Login">
+          </form>
+          <div id="submitMessage" class="submit-message" style="display: none;"></div>
+        </div>
+  <form>
+    <br><br>
+    <input type="button" value="Regitster" onclick="redirectToRegistration()">
+  </form>
+  <form id="registration-form" action="registration.html" method="POST">
+  </form>
+    </div>
+
+    <script>
+      function handleSubmit(event) {
+        event.preventDefault(); // Prevents the form from submitting normally
+
+        // Get values from the form
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+
+        // Log the values (you can do whatever you want with them)
+        console.log('Email:', email);
+        console.log('password:', password);
+         const formData = {
+          email: email,
+          password: password,
+        };
+
+          fetch('http://localhost:5000/api/loginuser', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(formData)
+        })
+          .then(response => {
+            if (response.ok) {
+              console.log('Form data submitted successfully');
+              alert("Form data submitted successfully")
+              window.location.reload();
+              // You can redirect or show a success message here if needed
+            } else {
+              console.error('Error submitting form data');
+              // Handle error cases here
+            }
+          })
+          .catch(error => {
+            console.error("error occure");
+        // You can perform further actions here, such as validation or sending data to the server
+      })
+
+      function redirectToRegistration() {
+        // Redirect to the registration page
+         window.location.href = "form.html";
+      }
+    }
+
+      // Attach event listener to the form for form submission
+      document.getElementById('login-form').addEventListener('submit', handleSubmit);
+    </script>
+    </body>
+</html>

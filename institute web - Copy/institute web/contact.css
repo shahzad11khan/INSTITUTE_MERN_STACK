@@ -1,0 +1,85 @@
+nav {
+    background-color: #333;
+    padding: 20px;
+  }
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  li {
+    display: inline-block;
+  }
+  li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+  }
+  li a:hover {
+    background-color: #555;
+  }
+  .main{
+    border: 2px solid black;
+    width: 96%;
+    height: 700px;
+    padding: 20px;
+    background-color:darkorange;
+    background-image: url("images/bg-1.jpg");
+    background-size: cover;
+  }
+  .one{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 70px;
+    float: left;
+  }
+  .two{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 70px;
+    
+  }
+  .three{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 70px;
+  }
+  .four{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    float: left;
+    border-radius: 70px;
+  }
+  .five{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 70px;
+  }
+  .six{
+    border: 2px dotted blue;
+    width: 31%;
+    height:300px;
+    display: inline-block;
+    box-sizing: border-box;
+    border-radius: 70px;
+  }
+  h3{
+  text-align: center;
+  color: white;
+  }

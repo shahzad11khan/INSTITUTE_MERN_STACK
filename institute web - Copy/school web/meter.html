@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .yes{
+            border: 2px solid black;
+            width: 40%;
+            height: 400px;
+            align-items: center;
+            color: lightcoral;
+            display: flex;
+           font-size: 15px;
+           text-align: center;
+           margin:auto;
+           background-color: lightgreen;
+           padding: 10px;
+        }
+        form{
+            margin: auto;
+        }
+    input[type="number"]{
+        text-shadow: 15px;
+        text-align: center;
+        padding: 20px;
+        margin: auto;
+       width: 100%;
+       display: block;
+    }
+
+    
+  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div class="yes">
+    <form action="">
+        <input type="number" id="Meter" placeholder="Meter"><br>
+        <input type="number" id="CentiMeter" placeholder="CentiMeter">
+    </form>
+</div>
+    <script>
+        let getMeter = document.getElementById('Meter');
+        let getCentiMeter = document.getElementById('CentiMeter');
+        let getValue;
+        let result;
+        getMeter.addEventListener('input',function(){
+            getValue = this.value;
+            result=getValue*100;
+            getCentiMeter.value=result;
+             
+        })
+         getCentiMeter.addEventListener('input',function(){
+            getValue = this.value;
+            result = getValue/100;
+            getMeter.value=result;
+             
+         })
+    </script>
+</body>
+</html>

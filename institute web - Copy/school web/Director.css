@@ -1,0 +1,91 @@
+
+nav {
+  background-color: #333;
+  padding: 20px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+li {
+  display: inline-block;
+  
+}
+
+li a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+}
+li a:hover {
+  background-color: #555;
+}
+   body {
+      margin: top;
+      padding: 0;
+    }
+
+    .main {
+      display: flex;
+    }
+
+    .cont1,.cont2 {
+        
+      width: 50%;
+      height: 300px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .cont1{
+       
+        background-image: url("images/director1.jpg");
+        background-repeat: no-repeat;
+        border-radius: 82px;
+    }
+    .cont2{
+        background-image: url("images/wasim11.jpg");
+        background-repeat: no-repeat;
+        border-radius: 42px;
+    }
+    h2{
+        text-align: right;
+    }
+
+    .container:nth-child(odd) {
+      background-color: #f0f0f0;
+    }
+
+    .container:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+.heading{
+    background-color: blue;
+    color: white;
+} 
+
+
+
+    
+    .nisar,.wasim {
+        display: inline-block;
+        box-sizing: border-box;
+        padding: 20px;
+        margin: auto;
+        
+      }
+      .nisar{
+        width: 48%;
+        height: auto;
+        
+      }
+      .wasim{
+        width: 48%;
+        height: auto;
+        
+      }
+
+ 

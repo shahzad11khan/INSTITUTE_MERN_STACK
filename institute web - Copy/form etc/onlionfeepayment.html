@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Fees Payment</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Online Fees Payment</h1>
+    <form id="paymentForm" action="#">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" name="fullname" required>
+    
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+    
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" min="0" required>
+    
+        <label for="cardnumber">Card Number:</label>
+        <input type="text" id="cardnumber" name="cardnumber" required>
+    
+        <label for="expiry">Expiry Date:</label>
+        <input type="text" id="expiry" name="expiry" placeholder="MM/YYYY" required>
+    
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" maxlength="3" required>
+    
+        <button type="submit">Pay Now</button>
+    </form>
+    </div>
+    <script>
+          const urlParams = new URLSearchParams(window.location.search);
+            const headingValue = urlParams.get("value");
+            console.log(headingValue)
+        document.getElementById('paymentForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent the form from submitting
+
+            // Get the values of the input fields
+            var fullname = document.getElementById('fullname').value;
+            var email = document.getElementById('email').value;
+            var amount = document.getElementById('amount').value;
+            var cardnumber = document.getElementById('cardnumber').value;
+            var expiry = document.getElementById('expiry').value;
+            var cvv = document.getElementById('cvv').value;
+
+            // Do something with the values (for example, log them to the console)
+            console.log("Full Name:", fullname);
+            console.log("Email:", email);
+            console.log("Amount:", amount);
+            console.log("Card Number:", cardnumber);
+            console.log("Expiry Date:", expiry);
+            console.log("CVV:", cvv);
+            console.log("Feepayment:", headingValue);
+            var formData = {
+                fullName: fullname,
+                email: email,
+                amount: amount,
+                cardNumber: cardnumber,
+                expiryDate: expiry,
+                cvv: cvv,
+                Feepayment: headingValue
+            };
+            // 
+                // Send the form data to the backend
+            fetch('http://localhost:5000/api/payments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        console.log('Form data submitted successfully');
+                        alert("Form data submitted successfully")
+                        // window.location.reload();
+                        document.getElementById('fullname').value = "";
+                        document.getElementById('email').value = "";
+                        document.getElementById('amount').value = "";
+                        document.getElementById('cardnumber').value = "";
+                        document.getElementById('expiry').value = "";
+                        document.getElementById('cvv').value = "";
+                        // You can redirect or show a success message here if needed
+                    } else {
+                        console.error('Error submitting form data');
+                        // Handle error cases here
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
+                
+            // You can perform further actions like sending this data to a server using AJAX
+        });
+    </script>
+</body>
+</html>

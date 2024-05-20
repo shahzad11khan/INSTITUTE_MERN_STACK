@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="home.css">
+  <link rel="stylesheet" href="home.js">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FARABI Hub of Knowledge</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="header-container">
+        <h1>Welcome to FARABI the HUB of Knowledge</h1>
+        <div class="quick-links">
+          <a href="/form etc/onlionfeepayment.html?value=feepayment" class="quick-link">Fee Payment</a>
+          <a href="/form etc/onliontest.html" class="quick-link">Online Test</a>
+          <a href="/form etc/onlionfeepayment.html?value=formsubmission" class="quick-link">Form Submission</a>
+          <a href="/institute web/contact.html" class="quick-link">Contact</a>
+      </div>
+        <marquee behavior="scroll" direction="left">Important Update: [Your Update Message]</marquee>
+    </div>
+    <div class="department-links">
+      <a href="school web/school.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">farabi Fast School and College</a>
+      <a href="Language.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi English language center</a>
+      <a href="Slftware.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">farabi computer institute</a>
+      <a href="tuetion.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi tuetion acadmey</a>
+      <a href="Slftware.html" class="department-link" onmouseover="changeColor(this)" onmouseout="restoreColor(this)">Farabi Fast Software House</a>
+  
+    </div>
+      <div class="director-containers" id="staff">
+       <div class="director-container">
+            <img src="institute web/images/director1.jpg">
+            <div class="text-area">
+                <h2>Director</h2>
+                <h2> Nisar Ahmad</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        
+        <div class="director-container">
+          <img src="institute web/images/musafar.jpg">
+          <div class="text-area">
+              <h2>Principal</h2>
+              <h2> musafar Ahmad</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+    </div>
+
+    <div class="director-container">
+      <img src="institute web/images/nori.jpg">
+      <div class="text-area">
+          <h2>Cordinator</h2>
+          <h2> Noor Ahmad</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      </div>
+      </div>
+
+      <div class="director-container">
+        <img src="institute web/images/director1.jpg">
+        <div class="text-area">
+            <h2>Director</h2>
+            <h2> Nisar Ahmad</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+        </div>
+    <script src="home.js"></script>
+    <script>
+      // Fetch data from the backend
+     fetch('http://localhost:5000/api/imageposts')
+        .then(response => response.json())
+        .then(data => {
+          console.log('Number of records:', data.length); // Log the number of records
+          const staffContainer = document.getElementById('staff');
+
+          // Use map function to iterate over the data and create HTML elements dynamically
+          const imagePostElements = data.map(imagePost => `
+      <div class="director-container">
+        <img src="http://localhost:5000/uploads/${imagePost.image}">
+        <div class="text-area">
+          <h2>${imagePost.name}</h2>
+          <p>${imagePost.shortDescription}</p>
+        </div>
+      </div>
+    `);
+          // Join the array of HTML elements and insert into the container
+          staffContainer.innerHTML = imagePostElements.join('');
+        })
+        .catch(error => console.error('Error fetching image posts:', error));
+    </script>
+</body>
+
+</html>
